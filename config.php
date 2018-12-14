@@ -12,9 +12,6 @@ Kirby::plugin(
                   $value = $this->placeholder ?? "";
                   $field = $this->model()->query($value, 'Kirby\Cms\Field');
                   return $field ? $field->text()->value() : $value;
-                },
-                'yo' => function(){
-                  return 'hi';
                 }
         ],
       ]
