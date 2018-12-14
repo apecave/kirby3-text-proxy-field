@@ -1,0 +1,25 @@
+{
+    "name": "apecave/kirby3-text-proxy-field",
+    "description": "Text field that can optionally proxy the placeholder value using the kirby query language",
+    "type": "kirby-plugin",
+    "license": "MIT",
+    "autoload": {
+        "files": ["config.php"]
+    },
+    "authors": [
+        {
+            "name": "Paul Wagner",
+            "email": "paulw@foodchain.com"
+        }
+    ],
+    "repositories": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/k-next/kirby"
+        }
+    ],
+    "require": {
+        "getkirby/cms": "^3.0"
+    },
+    "minimum-stability": "beta"
+}
