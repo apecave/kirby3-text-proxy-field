@@ -6,7 +6,17 @@ Kirby::plugin(
     'root'     => dirname(__FILE__, 1),
     'fields' => [
       'text-proxy' => [
-      	'extends' => 'text',
+        'extends' => 'text',
+        'computed' => [
+                'placeholder' => function() {
+                  $value = $this->placeholder ?? "";
+                  $field = $this->model()->query($value, 'Kirby\Cms\Field');
+                  return $field ? $field->text()->value() : $value;
+                }
+        ],
+      ],
+      'textarea-proxy' => [
+        'extends' => 'textarea',
         'computed' => [
                 'placeholder' => function() {
                   $value = $this->placeholder ?? "";

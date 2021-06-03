@@ -6,6 +6,9 @@ panel.plugin('apecave/kirby3-text-proxy-field', {
                 value: String,
                 label: String,
                 name: String,
+                help: String,
+                maxlength: Number,
+                minlength: Number
             },
 
             methods: {
@@ -14,7 +17,27 @@ panel.plugin('apecave/kirby3-text-proxy-field', {
                 }
             },
 
-            template: '<k-text-field v-model="value" :label="label" :name="name" :placeholder="placeholder" @input="input"/>',
+            template: '<k-text-field v-model="value" :label="label" :name="name" :maxlength="maxlength" :minlength="minlength" :help="help" :placeholder="placeholder" @input="input"/>',
+
+        },
+        'textarea-proxy': {
+            props: {
+                placeholder: String,
+                value: String,
+                label: String,
+                name: String,
+                help: String,
+                maxlength: Number,
+                minlength: Number
+            },
+
+            methods: {
+                input() {
+                    this.$emit("input", this.value);
+                }
+            },
+
+            template: '<k-textarea-field v-model="value" :label="label" :name="name" :maxlength="maxlength" :minlength="minlength" :help="help" :placeholder="placeholder" @input="input"/>',
 
         }
     }
